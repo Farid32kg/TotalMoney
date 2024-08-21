@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .back-link {
+            color: orange;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center my-4">Update</h1>
+    <div class="card p-4">
+        <h2 class="text-center mb-4">Petrol Price per Km.</h2>
+        <form action="#" th:action="@{/save-update}" th:object="${totalForm}" method="post">
+            <div class="form-group">
+                <label for="rabite" class="form-label">Rabite</label>
+                <input type="number" id="rabite" th:field="*{rabite}" step="0.01" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="kapital" class="form-label">Kapital</label>
+                <input type="number" id="kapital" th:field="*{kapital}" step="0.01" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="cash" class="form-label">Cash</label>
+                <input type="number" id="cash" th:field="*{cash}" step="0.01" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="notes" class="form-label">Notes</label>
+                <input type="text" id="notes" th:field="*{notes}" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-custom">Update</button>
+        </form>
+        <a href="/all" class="d-block text-center mt-3 back-link"><-Back</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (optional for some features) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
